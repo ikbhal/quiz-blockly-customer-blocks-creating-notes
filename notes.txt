@@ -1,0 +1,96 @@
+https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#
+
+Block defintion 
+
+[{
+  "type": "question",
+  "message0": "Question %1 text %2 option 1 %3 option 2 %4 option 3 %5 option 4 %6 correct answer %7",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "text"
+    },
+    {
+      "type": "input_value",
+      "name": "option 1",
+      "check": "String"
+    },
+    {
+      "type": "input_value",
+      "name": "option 2",
+      "check": "String"
+    },
+    {
+      "type": "input_value",
+      "name": "option 3",
+      "check": "String"
+    },
+    {
+      "type": "input_value",
+      "name": "option 4",
+      "check": "String"
+    },
+    {
+      "type": "input_value",
+      "name": "NAME",
+      "check": "Number"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "test",
+  "message0": "Test %1 %2 %3 %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "Test Today",
+      "text": "default"
+    },
+    {
+      "type": "input_value",
+      "name": "name"
+    },
+    {
+      "type": "input_statement",
+      "name": "questions"
+    }
+  ],
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}]
+
+
+----
+
+Blockly.JavaScript['question'] = function(block) {
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_option_1 = Blockly.JavaScript.valueToCode(block, 'option 1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_option_2 = Blockly.JavaScript.valueToCode(block, 'option 2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_option_3 = Blockly.JavaScript.valueToCode(block, 'option 3', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_option_4 = Blockly.JavaScript.valueToCode(block, 'option 4', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['test'] = function(block) {
+  var text_test_today = block.getFieldValue('Test Today');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_questions = Blockly.JavaScript.statementToCode(block, 'questions');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
